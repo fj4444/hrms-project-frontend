@@ -13,13 +13,7 @@ export default function Home() {
         <Overlay />
         <Steps />
         <JobAdvertsList size={6} pagination={false} />
-        {/* <div className='text-center mb-5'>
-          <Link to='/jobadvert' className='btn btn-primary rounded shadow'>
-            Browse All
-          </Link>
-        </div> */}
         <CandidatesList />
-        {/* <CreateAccountBanner /> */}
       </div>
     </div>
   );
