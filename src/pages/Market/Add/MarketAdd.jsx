@@ -8,13 +8,13 @@ import DisplayHeader from "../../../components/DisplayHeader/DisplayHeader";
 import FormInput from "../../../components/FormInput/FormInput";
 import FormSelect from "../../../components/FormSelect/FormSelect";
 import FormTextArea from "../../../components/FormTextArea/FormTextArea";
-import JobAdvertService from "../../../services/jobAdvertService";
+import JobAdvertService from "../../../services/SingleMatchService";
 import JobPositionService from "../../../services/jobPositionService";
 import WorkingTimeService from "../../../services/workingTimeService";
 import WorkingTypeService from "../../../services/workingTypeService";
 import { toast } from "react-toastify";
 
-export default function JobAdvertsAdd() {
+export default function MarketAdd() {
   const [cities, setCities] = useState([]),
     [jobPositions, setJobPositions] = useState([]),
     [workingTypes, setWorkingTypes] = useState([]),

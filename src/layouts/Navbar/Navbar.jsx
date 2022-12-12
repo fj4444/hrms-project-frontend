@@ -25,9 +25,9 @@ export default function Navbar() {
         <div className='collapse navbar-collapse' id='navbarmenu'>
           <ul className='navbar-nav me-auto mb-2 mb-lg-0 w-100 justify-content-center'>
             <NavItem linkTo='' name='主页' iconClassName='bi bi-house' />
-            <NavItem linkTo='/jobadvert' name='单场比赛' iconClassName='bi bi-search' />
-            <NavItem linkTo='/about' name='系列比赛' iconClassName='bi bi-search' />
-            <NavItem linkTo='/jobadvert/add' name='交易市场' iconClassName='bi bi-card-text' />
+            <NavItem linkTo='/singlematch' name='单场比赛' iconClassName='bi bi-search' />
+            <NavItem linkTo='/multiplematch' name='系列比赛' iconClassName='bi bi-search' />
+            <NavItem linkTo='/market/add' name='交易市场' iconClassName='bi bi-card-text' />
           </ul>
         </div>
         <div>
