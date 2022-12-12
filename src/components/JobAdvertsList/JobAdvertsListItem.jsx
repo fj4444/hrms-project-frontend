@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 
-import JobSeekerService from "../../services/jobSeekerService";
+// import JobSeekerService from "../../services/jobSeekerService";
 import { Link } from "react-router-dom";
 
 export default function JobAdvertListItem({ jobAdvert }) {
@@ -8,25 +8,25 @@ export default function JobAdvertListItem({ jobAdvert }) {
     "🚀 ~ file: JobAdvertsListItem.jsx ~ line 7 ~ JobAdvertListItem ~ jobAdvert",
     jobAdvert
   );
-  const [jobSeekersFavoriteJobAdvert, setJobSeekersFavoriteJobAdvert] = useState(null);
+  // const [jobSeekersFavoriteJobAdvert, setJobSeekersFavoriteJobAdvert] = useState(null);
 
-  const jobSeekerService = useMemo(() => new JobSeekerService(), []),
-    getByJobSeekerIdAndJobAdvertId = useCallback(async () => {
-      const user = { id: 1 }, //TODO Login Redux
-        result = await jobSeekerService.getByJobSeekerIdAndJobAdvertId(user.id, jobAdvert.id);
-      if (result.data.success) setJobSeekersFavoriteJobAdvert(result.data.data);
-    }, [jobSeekerService, jobAdvert.id]),
-    favorite = async () => {
-      const user = { id: 1 }, //TODO Login Redux
-        result = await jobSeekerService.favoriteJobAdvert({ jobSeeker: user, jobAdvert });
-      if (result.data.success) getByJobSeekerIdAndJobAdvertId();
-    },
-    undoFavorite = async () => {
-      const result = await jobSeekerService.undoFavoriteJobAdvert(jobSeekersFavoriteJobAdvert.id);
-      if (result.data.success) setJobSeekersFavoriteJobAdvert(null);
-    };
+  // const jobSeekerService = useMemo(() => new JobSeekerService(), []),
+  //   getByJobSeekerIdAndJobAdvertId = useCallback(async () => {
+  //     const user = { id: 1 }, //TODO Login Redux
+  //       result = await jobSeekerService.getByJobSeekerIdAndJobAdvertId(user.id, jobAdvert.id);
+  //     if (result.data.success) setJobSeekersFavoriteJobAdvert(result.data.data);
+  //   }, [jobSeekerService, jobAdvert.id]),
+  //   favorite = async () => {
+  //     const user = { id: 1 }, //TODO Login Redux
+  //       result = await jobSeekerService.favoriteJobAdvert({ jobSeeker: user, jobAdvert });
+  //     if (result.data.success) getByJobSeekerIdAndJobAdvertId();
+  //   },
+  //   undoFavorite = async () => {
+  //     const result = await jobSeekerService.undoFavoriteJobAdvert(jobSeekersFavoriteJobAdvert.id);
+  //     if (result.data.success) setJobSeekersFavoriteJobAdvert(null);
+  //   };
 
-  useEffect(() => getByJobSeekerIdAndJobAdvertId(), [getByJobSeekerIdAndJobAdvertId]);
+  // useEffect(() => getByJobSeekerIdAndJobAdvertId(), [getByJobSeekerIdAndJobAdvertId]);
 
   return (
     <div className='col-md-5 px-4 m-3'>
@@ -73,7 +73,7 @@ export default function JobAdvertListItem({ jobAdvert }) {
             </div>
           </div>
           <div>
-            {jobSeekersFavoriteJobAdvert ? (
+            {/* {true ? (
               <button type='button' className='btn shadow-none' onClick={() => undoFavorite()}>
                 <i className='bi bi-star-fill'></i>
               </button>
@@ -81,7 +81,10 @@ export default function JobAdvertListItem({ jobAdvert }) {
               <button type='button' className='btn shadow-none' onClick={() => favorite()}>
                 <i className='bi bi-star text-secondary'></i>
               </button>
-            )}
+            )} */}
+            <button type='button' className='btn shadow-none' >
+                <i className='bi bi-star text-secondary'></i>
+              </button>
             <Link className='btn btn-primary rounded' to='/'>
               Apply Now
             </Link>

@@ -1,6 +1,6 @@
-import CandidatesList from "../../components/CandidatesList/CandidatesList";
+// import CandidatesList from "../../components/CandidatesList/CandidatesList";
 // import CreateAccountBanner from "./CreateAccountBanner";
-import JobAdvertsList from "../../components/JobAdvertsList/JobAdvertsList";
+// import JobAdvertsList from "../../components/JobAdvertsList/JobAdvertsList";
 // import { Link } from "react-router-dom";
 import Overlay from "./Overlay";
 import React from "react";
@@ -12,8 +12,6 @@ export default function Home() {
       <div className='container'>
         <Overlay />
         <Steps />
-        <JobAdvertsList size={6} pagination={false} />
-        <CandidatesList />
       </div>
     </div>
   );
