@@ -12,8 +12,6 @@ export default function SingleMatchList() {
     getAllByIsActiveForList = useEffect(
       async () => {
         const result = await SingleMatchservice.getAllByIsActiveForList();
-        // console.log(result);
-        // if (result.data.success) setSingleMatchs(result.data.data);
         setSingleMatchs(result);
       },
       [SingleMatchservice]
