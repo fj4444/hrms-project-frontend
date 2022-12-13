@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export default class JobAdvertService {
+export default class MarketService {
   controllerUrl = `${process.env.REACT_APP_API_URL}/jobadverts`;
 
   add({
@@ -51,16 +51,31 @@ export default class JobAdvertService {
     });
   }
 
-  getAllByIsActiveForList(isActive, page, size, sortDirection, sortProperties) {
-    return axios.get(`${this.controllerUrl}/forlist/byisactive`, {
-      params: {
-        isActive,
-        page,
-        size,
-        sortDirection,
-        sortProperties,
-      },
-    });
+  getAllByIsActiveForList() {
+    // return axios.get(`${this.controllerUrl}/forlist/byisactive`, {
+    //   params: {
+    //     isActive,
+    //     page,
+    //     size,
+    //     sortDirection,
+    //     sortProperties,
+    //   },
+    // });
+    const result = {
+      data: [
+        {
+          id: 1,
+          betDeadline: "2022-11-01",
+          startAt:"2022-11-01",
+          host: "英格兰",
+          guest: "法国",
+          hostRate: 10,
+          guestRate: 20
+        }
+      ],        
+      length: 1,
+    };
+    return result;
   }
 
   getAllByIsActiveAndEmployer_CompanyNameForList(
