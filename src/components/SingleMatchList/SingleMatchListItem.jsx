@@ -1,7 +1,6 @@
 import React from "react";
 
-import { Link } from "react-router-dom";
-
+import BidService from "../../services/bidService";
 export default function SingleMatchItem({ matchitem }) {
   console.log(
     "🚀 ~ file: SingleMatchListItem.jsx ~ line 7 ~ SingleMatchListItem ",
@@ -24,20 +23,30 @@ export default function SingleMatchItem({ matchitem }) {
             </div>
           </div>
         </div>
-        <div className='d-flex justify-content-between align-items-center mt-3'>
+        <div className='d-flex justify-content-between align-items-center mt-3 flex-row'>
           <div>
-            <div className='text-muted m-0'>
-              Posted at {matchitem.startAt}
-            </div>
-            <div className='text-muted'>
-              Deadline at {matchitem.betDeadline}
+            <div className='text-muted m-3'>
+              <p>Deadline at {matchitem.betDeadline}</p>
             </div>
           </div>
-          <div>
-            <Link className='btn btn-primary rounded' to='/'>
-              下注
-            </Link>
-          </div>
+          <form name="bid_form" className="d-flex justify-content-center flex-column">
+            <select name="winner" className="rounded input-group-text" required="required">
+            <option value="" disabled selected>选择胜方</option>
+            <option value="host">{matchitem.host}</option>
+            <option value="guest">{matchitem.guest}</option>
+            </select>
+            <input name="amount" placeholder="请输入金额" type="text" className="rounded input-group-text" required="required" />
+            <input className="btn btn-primary rounded" type="submit" value="下注"
+              onClick={()=>new BidService().bid(
+                {
+                  from: "win",
+                  // data: {
+                  //   winner: bid_form.winner.value,
+                  //   amount: 
+                  // }
+                }
+              )} /> 
+          </form>
         </div>
       </div>
     </div>
