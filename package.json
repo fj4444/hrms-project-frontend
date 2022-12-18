@@ -12,6 +12,7 @@
     "bootstrap-icons": "^1.5.0",
     "formik": "^2.2.9",
     "js-convert-case": "^4.1.2",
+    "metamask": "^0.0.1-security",
     "node-sass": "^6.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -19,6 +20,7 @@
     "react-scripts": "4.0.3",
     "react-toastify": "^7.0.4",
     "web-vitals": "^1.1.2",
+    "web3": "^1.8.1",
     "yup": "^0.32.9"
   },
   "scripts": {

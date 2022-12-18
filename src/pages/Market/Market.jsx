@@ -1,10 +1,10 @@
-import SingleMatchList from "../../components/SingleMatchList/SingleMatchList";
+import MarketList from "../../components/MarketList/MarketList";
 import React from "react";
 
-export default function SingleMatch() {
+export default function Market() {
   return (
     <div className='container'>
-      <SingleMatchList />
+      <MarketList />
     </div>
   );
 }

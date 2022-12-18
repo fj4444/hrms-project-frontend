@@ -4,15 +4,13 @@ import "react-toastify/dist/ReactToastify.css";
 
 import { Route, BrowserRouter as Router, Switch } from "react-router-dom";
 
-import EmployerUpdate from "./pages/Employers/Update/EmployerUpdate";
-import EmployerUpdateVerify from "./pages/Employers/Update/Verify/EmployerUpdateVerify";
 import Footer from "./layouts/Footer/Footer";
 import Home from "./pages/Home/Home";
 import SingleMatch from "./pages/SingleMatch";
 import MultipleMatch from "./pages/MultipleMatch";
-import MarketAdd from "./pages/Market/Add/MarketAdd";
 import Navbar from "./layouts/Navbar/Navbar";
 import { ToastContainer } from "react-toastify";
+import Market from "./pages/Market/Market";
 
 function App() {
   return (
@@ -23,10 +21,8 @@ function App() {
           <Switch>
             <Route exact path='/' component={Home} />
             <Route exact path='/singlematch' component={SingleMatch} />
-            <Route exact path='/market/add' component={MarketAdd} />
+            <Route exact path='/market/' component={Market} />
             <Route exact path='/multiplematch' component={MultipleMatch} />
-            <Route exact path='/employer/update' component={EmployerUpdate} />
-            <Route exact path='/employer/update/verify' component={EmployerUpdateVerify} />
           </Switch>
         </main>
         <Footer />
