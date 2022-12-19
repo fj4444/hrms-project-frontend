@@ -1,4 +1,4 @@
-import MarketList from "../../components/MarketList/MarketList";
+import MarketList from "../components/MarketList/MarketList";
 import React from "react";
 
 export default function Market() {

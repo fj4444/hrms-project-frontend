@@ -10,7 +10,7 @@ import SingleMatch from "./pages/SingleMatch";
 import MultipleMatch from "./pages/MultipleMatch";
 import Navbar from "./layouts/Navbar/Navbar";
 import { ToastContainer } from "react-toastify";
-import Market from "./pages/Market/Market";
+import Market from "./pages/Market";
 
 function App() {
   return (
