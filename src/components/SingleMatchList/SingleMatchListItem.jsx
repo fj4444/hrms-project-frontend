@@ -6,7 +6,7 @@ export default function SingleMatchItem({ matchitem }) {
   const [winner, setWinner] = useState('');
 
   function handleSubmit(event) {
-    event.preventDefault();
+    // event.preventDefault();
     // console.log("提交");
     const bidService = new BidService();
     bidService.bid({
@@ -38,7 +38,7 @@ export default function SingleMatchItem({ matchitem }) {
         <div className='d-flex justify-content-between align-items-center mt-3 flex-row'>
           <div>
             <div className='text-muted m-3'>
-              <p>Deadline at {matchitem.betDeadline}</p>
+              <p>Deadline at </p><p>{matchitem.betDeadline}</p>
             </div>
           </div>
           <form name="bid_form" className="d-flex justify-content-center flex-column" onSubmit={handleSubmit}>
