@@ -1,21 +1,38 @@
+import Lottery from "../contracts/Lottery.json";
+import { ethers } from "ethers";
+const lotteryaddr = process.env.REACT_APP_POOL_ADDR;
 export default class SingleMatchService {
-  controllerUrl = `${process.env.REACT_APP_API_URL}/jobadverts`;
+  
 
-  getAllByIsActiveForList() {
-    const result = {
-      data: [
-        {
-          id: 1,
-          betDeadline: "2022-11-01 12:30",
-          startAt: "2022-11-01 08:00",
-          host: "英格兰",
-          guest: "法国",
-          hostRate: 10,
-          guestRate: 20
+  async getAllByIsActiveForList() {
+    if (localStorage.getItem("address")) {
+      if (typeof window.ethereum !== 'undefined') {
+        const provider = new ethers.providers.Web3Provider(window.ethereum);
+        const signer = provider.getSigner();
+        const contract = new ethers.Contract(lotteryaddr, Lottery.abi, signer);
+        const transaction = await contract.games_info(0);
+        console.log(transaction);
+        const result = {
+          data: [],
+          length: transaction.length,
+        };
+        for (var matchitem of transaction) {
+          result.data.push({
+            id: matchitem.id,
+            betDeadline: matchitem.gamble_ddl,
+            startAt: matchitem.begin_time,
+            host: matchitem.teamA,
+            guest: matchitem.teamB,
+            hostRate: matchitem.rate_A_win/1000,
+            guestRate: matchitem.rate_B_win/1000,
+          })
         }
-      ],
-      length: 1,
-    };
-    return result;
+        return result;
+      }
+    }
+    else {
+      alert("请先链接钱包");
+      window.location.replace("/");
+    }
   }
 }

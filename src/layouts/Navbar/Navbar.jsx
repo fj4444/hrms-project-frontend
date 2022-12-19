@@ -64,7 +64,7 @@ export default function Navbar() {
               iconClassName="bi bi-search"
             />
             <NavItem
-              linkTo="/market/add"
+              linkTo="/market"
               name="交易市场"
               iconClassName="bi bi-card-text"
             />

@@ -6,7 +6,7 @@ export default function SingleMatchItem({ matchitem }) {
   const [winner, setWinner] = useState('');
 
   function handleSubmit(event) {
-    // event.preventDefault();
+    event.preventDefault();
     // console.log("提交");
     const bidService = new BidService();
     bidService.bid({

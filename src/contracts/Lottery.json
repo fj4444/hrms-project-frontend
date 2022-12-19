@@ -1,0 +1,704 @@
+{
+    "abi": [
+        {
+            "inputs": [
+                {
+                    "internalType": "string",
+                    "name": "begin_time",
+                    "type": "string"
+                },
+                {
+                    "internalType": "string",
+                    "name": "gamble_ddl",
+                    "type": "string"
+                },
+                {
+                    "internalType": "string",
+                    "name": "teamA",
+                    "type": "string"
+                },
+                {
+                    "internalType": "string",
+                    "name": "teamB",
+                    "type": "string"
+                },
+                {
+                    "internalType": "string",
+                    "name": "game_name",
+                    "type": "string"
+                },
+                {
+                    "internalType": "uint16",
+                    "name": "rate_A_win",
+                    "type": "uint16"
+                },
+                {
+                    "internalType": "uint16",
+                    "name": "rate_B_win",
+                    "type": "uint16"
+                },
+                {
+                    "internalType": "uint16",
+                    "name": "rate_draw",
+                    "type": "uint16"
+                }
+            ],
+            "name": "add_game",
+            "outputs": [
+                {
+                    "internalType": "uint32",
+                    "name": "",
+                    "type": "uint32"
+                }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address payable",
+                    "name": "gambler_adr",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint32",
+                    "name": "game_id",
+                    "type": "uint32"
+                },
+                {
+                    "internalType": "bool",
+                    "name": "is_A_win",
+                    "type": "bool"
+                },
+                {
+                    "internalType": "bool",
+                    "name": "is_B_win",
+                    "type": "bool"
+                },
+                {
+                    "internalType": "uint32",
+                    "name": "bet_money",
+                    "type": "uint32"
+                }
+            ],
+            "name": "gambler_place_bet",
+            "outputs": [
+                {
+                    "internalType": "bool",
+                    "name": "",
+                    "type": "bool"
+                }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint32",
+                    "name": "id",
+                    "type": "uint32"
+                },
+                {
+                    "internalType": "uint8",
+                    "name": "A_score",
+                    "type": "uint8"
+                },
+                {
+                    "internalType": "uint8",
+                    "name": "B_score",
+                    "type": "uint8"
+                },
+                {
+                    "internalType": "bool",
+                    "name": "is_A_win",
+                    "type": "bool"
+                },
+                {
+                    "internalType": "bool",
+                    "name": "is_B_win",
+                    "type": "bool"
+                },
+                {
+                    "internalType": "uint16",
+                    "name": "rate_A_win",
+                    "type": "uint16"
+                },
+                {
+                    "internalType": "uint16",
+                    "name": "rate_B_win",
+                    "type": "uint16"
+                },
+                {
+                    "internalType": "uint16",
+                    "name": "rate_draw",
+                    "type": "uint16"
+                }
+            ],
+            "name": "game_close",
+            "outputs": [
+                {
+                    "internalType": "bool",
+                    "name": "",
+                    "type": "bool"
+                }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint32",
+                    "name": "id",
+                    "type": "uint32"
+                }
+            ],
+            "name": "game_gamble_end",
+            "outputs": [
+                {
+                    "internalType": "bool",
+                    "name": "",
+                    "type": "bool"
+                }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "stateMutability": "nonpayable",
+            "type": "constructor"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "Sender",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "Value",
+                    "type": "uint256"
+                }
+            ],
+            "name": "receivedCalled",
+            "type": "event"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint32",
+                    "name": "id",
+                    "type": "uint32"
+                },
+                {
+                    "internalType": "uint16",
+                    "name": "rate_A_win",
+                    "type": "uint16"
+                },
+                {
+                    "internalType": "uint16",
+                    "name": "rate_B_win",
+                    "type": "uint16"
+                },
+                {
+                    "internalType": "uint16",
+                    "name": "rate_draw",
+                    "type": "uint16"
+                }
+            ],
+            "name": "update_rate",
+            "outputs": [
+                {
+                    "internalType": "bool",
+                    "name": "",
+                    "type": "bool"
+                }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "stateMutability": "payable",
+            "type": "receive"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "name": "adr_to_gamble_time",
+            "outputs": [
+                {
+                    "internalType": "uint32",
+                    "name": "",
+                    "type": "uint32"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "name": "adr_to_GamblerBets",
+            "outputs": [
+                {
+                    "internalType": "address",
+                    "name": "gambler_adr",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint32",
+                    "name": "game_id",
+                    "type": "uint32"
+                },
+                {
+                    "internalType": "uint32",
+                    "name": "money",
+                    "type": "uint32"
+                },
+                {
+                    "internalType": "bool",
+                    "name": "pred_A_win",
+                    "type": "bool"
+                },
+                {
+                    "internalType": "bool",
+                    "name": "pred_B_win",
+                    "type": "bool"
+                },
+                {
+                    "internalType": "bool",
+                    "name": "is_paid",
+                    "type": "bool"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "gambler_adr",
+                    "type": "address"
+                }
+            ],
+            "name": "gambler_info",
+            "outputs": [
+                {
+                    "components": [
+                        {
+                            "internalType": "uint32",
+                            "name": "money",
+                            "type": "uint32"
+                        },
+                        {
+                            "internalType": "bool",
+                            "name": "pred_A_win",
+                            "type": "bool"
+                        },
+                        {
+                            "internalType": "bool",
+                            "name": "pred_B_win",
+                            "type": "bool"
+                        },
+                        {
+                            "internalType": "bool",
+                            "name": "is_paid",
+                            "type": "bool"
+                        },
+                        {
+                            "internalType": "string",
+                            "name": "begin_time",
+                            "type": "string"
+                        },
+                        {
+                            "internalType": "string",
+                            "name": "teamA",
+                            "type": "string"
+                        },
+                        {
+                            "internalType": "string",
+                            "name": "teamB",
+                            "type": "string"
+                        },
+                        {
+                            "internalType": "string",
+                            "name": "game_name",
+                            "type": "string"
+                        },
+                        {
+                            "internalType": "bool",
+                            "name": "is_A_win",
+                            "type": "bool"
+                        },
+                        {
+                            "internalType": "bool",
+                            "name": "is_B_win",
+                            "type": "bool"
+                        },
+                        {
+                            "internalType": "uint8",
+                            "name": "A_score",
+                            "type": "uint8"
+                        },
+                        {
+                            "internalType": "uint8",
+                            "name": "B_score",
+                            "type": "uint8"
+                        },
+                        {
+                            "internalType": "uint16",
+                            "name": "rate_A_win",
+                            "type": "uint16"
+                        },
+                        {
+                            "internalType": "uint16",
+                            "name": "rate_B_win",
+                            "type": "uint16"
+                        },
+                        {
+                            "internalType": "uint16",
+                            "name": "rate_draw",
+                            "type": "uint16"
+                        },
+                        {
+                            "internalType": "uint32",
+                            "name": "pool_value",
+                            "type": "uint32"
+                        },
+                        {
+                            "internalType": "uint32",
+                            "name": "pool_val_A_win",
+                            "type": "uint32"
+                        },
+                        {
+                            "internalType": "uint32",
+                            "name": "pool_val_B_win",
+                            "type": "uint32"
+                        },
+                        {
+                            "internalType": "uint32",
+                            "name": "pool_val_draw",
+                            "type": "uint32"
+                        }
+                    ],
+                    "internalType": "struct Lottery.Gambler_bet_info[]",
+                    "name": "",
+                    "type": "tuple[]"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "name": "games",
+            "outputs": [
+                {
+                    "internalType": "uint32",
+                    "name": "id",
+                    "type": "uint32"
+                },
+                {
+                    "internalType": "string",
+                    "name": "begin_time",
+                    "type": "string"
+                },
+                {
+                    "internalType": "string",
+                    "name": "teamA",
+                    "type": "string"
+                },
+                {
+                    "internalType": "string",
+                    "name": "teamB",
+                    "type": "string"
+                },
+                {
+                    "internalType": "string",
+                    "name": "game_name",
+                    "type": "string"
+                },
+                {
+                    "internalType": "bool",
+                    "name": "is_A_win",
+                    "type": "bool"
+                },
+                {
+                    "internalType": "bool",
+                    "name": "is_B_win",
+                    "type": "bool"
+                },
+                {
+                    "internalType": "uint8",
+                    "name": "A_score",
+                    "type": "uint8"
+                },
+                {
+                    "internalType": "uint8",
+                    "name": "B_score",
+                    "type": "uint8"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "games_able_to_gamble_num",
+            "outputs": [
+                {
+                    "internalType": "uint32",
+                    "name": "",
+                    "type": "uint32"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "name": "games_bets",
+            "outputs": [
+                {
+                    "internalType": "string",
+                    "name": "gamble_ddl",
+                    "type": "string"
+                },
+                {
+                    "internalType": "bool",
+                    "name": "is_gamble_end",
+                    "type": "bool"
+                },
+                {
+                    "internalType": "bool",
+                    "name": "is_closed",
+                    "type": "bool"
+                },
+                {
+                    "internalType": "uint32",
+                    "name": "pool_value",
+                    "type": "uint32"
+                },
+                {
+                    "internalType": "uint32",
+                    "name": "pool_val_A_win",
+                    "type": "uint32"
+                },
+                {
+                    "internalType": "uint32",
+                    "name": "pool_val_B_win",
+                    "type": "uint32"
+                },
+                {
+                    "internalType": "uint32",
+                    "name": "pool_val_draw",
+                    "type": "uint32"
+                },
+                {
+                    "internalType": "uint16",
+                    "name": "rate_A_win",
+                    "type": "uint16"
+                },
+                {
+                    "internalType": "uint16",
+                    "name": "rate_B_win",
+                    "type": "uint16"
+                },
+                {
+                    "internalType": "uint16",
+                    "name": "rate_draw",
+                    "type": "uint16"
+                },
+                {
+                    "internalType": "uint32",
+                    "name": "bet_times",
+                    "type": "uint32"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "games_close_num",
+            "outputs": [
+                {
+                    "internalType": "uint32",
+                    "name": "",
+                    "type": "uint32"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint32",
+                    "name": "state",
+                    "type": "uint32"
+                }
+            ],
+            "name": "games_info",
+            "outputs": [
+                {
+                    "components": [
+                        {
+                            "internalType": "uint32",
+                            "name": "id",
+                            "type": "uint32"
+                        },
+                        {
+                            "internalType": "string",
+                            "name": "begin_time",
+                            "type": "string"
+                        },
+                        {
+                            "internalType": "string",
+                            "name": "teamA",
+                            "type": "string"
+                        },
+                        {
+                            "internalType": "string",
+                            "name": "teamB",
+                            "type": "string"
+                        },
+                        {
+                            "internalType": "string",
+                            "name": "game_name",
+                            "type": "string"
+                        },
+                        {
+                            "internalType": "bool",
+                            "name": "is_A_win",
+                            "type": "bool"
+                        },
+                        {
+                            "internalType": "bool",
+                            "name": "is_B_win",
+                            "type": "bool"
+                        },
+                        {
+                            "internalType": "uint8",
+                            "name": "A_score",
+                            "type": "uint8"
+                        },
+                        {
+                            "internalType": "uint8",
+                            "name": "B_score",
+                            "type": "uint8"
+                        },
+                        {
+                            "internalType": "string",
+                            "name": "gamble_ddl",
+                            "type": "string"
+                        },
+                        {
+                            "internalType": "bool",
+                            "name": "is_gamble_end",
+                            "type": "bool"
+                        },
+                        {
+                            "internalType": "bool",
+                            "name": "is_closed",
+                            "type": "bool"
+                        },
+                        {
+                            "internalType": "uint32",
+                            "name": "pool_value",
+                            "type": "uint32"
+                        },
+                        {
+                            "internalType": "uint32",
+                            "name": "pool_val_A_win",
+                            "type": "uint32"
+                        },
+                        {
+                            "internalType": "uint32",
+                            "name": "pool_val_B_win",
+                            "type": "uint32"
+                        },
+                        {
+                            "internalType": "uint32",
+                            "name": "pool_val_draw",
+                            "type": "uint32"
+                        },
+                        {
+                            "internalType": "uint16",
+                            "name": "rate_A_win",
+                            "type": "uint16"
+                        },
+                        {
+                            "internalType": "uint16",
+                            "name": "rate_B_win",
+                            "type": "uint16"
+                        },
+                        {
+                            "internalType": "uint16",
+                            "name": "rate_draw",
+                            "type": "uint16"
+                        },
+                        {
+                            "internalType": "uint32",
+                            "name": "bet_times",
+                            "type": "uint32"
+                        }
+                    ],
+                    "internalType": "struct Lottery.Game_info[]",
+                    "name": "",
+                    "type": "tuple[]"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "games_num",
+            "outputs": [
+                {
+                    "internalType": "uint32",
+                    "name": "",
+                    "type": "uint32"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        }
+    ]
+}
