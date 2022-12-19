@@ -72,7 +72,7 @@ export default function Navbar() {
           </ul>
         </div>
         <div>
-          {active ? (
+          {active||localStorage.getItem("address") ? (
             <button className="btn btn-outline-primary me-4 py-2 px-4 rounded shadow"
               onClick={disconnect}
             >

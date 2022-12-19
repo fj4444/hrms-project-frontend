@@ -75,11 +75,6 @@
                     "internalType": "bool",
                     "name": "is_B_win",
                     "type": "bool"
-                },
-                {
-                    "internalType": "uint32",
-                    "name": "bet_money",
-                    "type": "uint32"
                 }
             ],
             "name": "gambler_place_bet",
@@ -90,7 +85,7 @@
                     "type": "bool"
                 }
             ],
-            "stateMutability": "nonpayable",
+            "stateMutability": "payable",
             "type": "function"
         },
         {
@@ -144,7 +139,7 @@
                     "type": "bool"
                 }
             ],
-            "stateMutability": "nonpayable",
+            "stateMutability": "payable",
             "type": "function"
         },
         {
@@ -170,6 +165,11 @@
             "inputs": [],
             "stateMutability": "nonpayable",
             "type": "constructor"
+        },
+        {
+            "inputs": [],
+            "name": "SendFailed",
+            "type": "error"
         },
         {
             "anonymous": false,
@@ -273,9 +273,9 @@
                     "type": "uint32"
                 },
                 {
-                    "internalType": "uint32",
+                    "internalType": "uint256",
                     "name": "money",
-                    "type": "uint32"
+                    "type": "uint256"
                 },
                 {
                     "internalType": "bool",
@@ -309,9 +309,9 @@
                 {
                     "components": [
                         {
-                            "internalType": "uint32",
+                            "internalType": "uint256",
                             "name": "money",
-                            "type": "uint32"
+                            "type": "uint256"
                         },
                         {
                             "internalType": "bool",
@@ -384,24 +384,24 @@
                             "type": "uint16"
                         },
                         {
-                            "internalType": "uint32",
+                            "internalType": "uint256",
                             "name": "pool_value",
-                            "type": "uint32"
+                            "type": "uint256"
                         },
                         {
-                            "internalType": "uint32",
+                            "internalType": "uint256",
                             "name": "pool_val_A_win",
-                            "type": "uint32"
+                            "type": "uint256"
                         },
                         {
-                            "internalType": "uint32",
+                            "internalType": "uint256",
                             "name": "pool_val_B_win",
-                            "type": "uint32"
+                            "type": "uint256"
                         },
                         {
-                            "internalType": "uint32",
+                            "internalType": "uint256",
                             "name": "pool_val_draw",
-                            "type": "uint32"
+                            "type": "uint256"
                         }
                     ],
                     "internalType": "struct Lottery.Gambler_bet_info[]",
@@ -510,24 +510,24 @@
                     "type": "bool"
                 },
                 {
-                    "internalType": "uint32",
+                    "internalType": "uint256",
                     "name": "pool_value",
-                    "type": "uint32"
+                    "type": "uint256"
                 },
                 {
-                    "internalType": "uint32",
+                    "internalType": "uint256",
                     "name": "pool_val_A_win",
-                    "type": "uint32"
+                    "type": "uint256"
                 },
                 {
-                    "internalType": "uint32",
+                    "internalType": "uint256",
                     "name": "pool_val_B_win",
-                    "type": "uint32"
+                    "type": "uint256"
                 },
                 {
-                    "internalType": "uint32",
+                    "internalType": "uint256",
                     "name": "pool_val_draw",
-                    "type": "uint32"
+                    "type": "uint256"
                 },
                 {
                     "internalType": "uint16",
@@ -639,24 +639,24 @@
                             "type": "bool"
                         },
                         {
-                            "internalType": "uint32",
+                            "internalType": "uint256",
                             "name": "pool_value",
-                            "type": "uint32"
+                            "type": "uint256"
                         },
                         {
-                            "internalType": "uint32",
+                            "internalType": "uint256",
                             "name": "pool_val_A_win",
-                            "type": "uint32"
+                            "type": "uint256"
                         },
                         {
-                            "internalType": "uint32",
+                            "internalType": "uint256",
                             "name": "pool_val_B_win",
-                            "type": "uint32"
+                            "type": "uint256"
                         },
                         {
-                            "internalType": "uint32",
+                            "internalType": "uint256",
                             "name": "pool_val_draw",
-                            "type": "uint32"
+                            "type": "uint256"
                         },
                         {
                             "internalType": "uint16",
