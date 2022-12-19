@@ -31,6 +31,7 @@ export default function Navbar() {
   function disconnect() {
     localStorage.removeItem("address");
     setActive(false);
+    window.location.replace("/");
   }
 
   return (
