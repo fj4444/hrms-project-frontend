@@ -6,7 +6,7 @@ export default function SingleMatchItem({ matchitem }) {
   const [winner, setWinner] = useState('');
 
   function handleSubmit(event) {
-    event.preventDefault();
+    // event.preventDefault();
     // console.log("提交");
     const bidService = new BidService();
     bidService.bid({
@@ -46,6 +46,7 @@ export default function SingleMatchItem({ matchitem }) {
               <option value="" disabled selected>选择胜方</option>
               <option value="host">{matchitem.host}</option>
               <option value="guest">{matchitem.guest}</option>
+              <option value="neither">平局</option>
             </select>
             <input name="value" placeholder="请输入金额,单位为ETH" type="text" className="rounded input-group-text" required="required" value={value} onChange={event=>setValue(event.target.value)} />
             <input className="btn btn-primary rounded" type="submit" value="下注" /> 

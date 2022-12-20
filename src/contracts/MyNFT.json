@@ -76,6 +76,57 @@
         {
             "inputs": [
                 {
+                    "internalType": "uint256",
+                    "name": "tokenid",
+                    "type": "uint256"
+                }
+            ],
+            "name": "burnNFT",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "_trade",
+                    "type": "uint256"
+                }
+            ],
+            "name": "cancelTrade",
+            "outputs": [
+                {
+                    "internalType": "bool",
+                    "name": "",
+                    "type": "bool"
+                }
+            ],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "_trade",
+                    "type": "uint256"
+                }
+            ],
+            "name": "executeTrade",
+            "outputs": [
+                {
+                    "internalType": "bool",
+                    "name": "",
+                    "type": "bool"
+                }
+            ],
+            "stateMutability": "payable",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
                     "internalType": "address",
                     "name": "recipient",
                     "type": "address"
@@ -98,28 +149,26 @@
             "type": "function"
         },
         {
-            "anonymous": false,
             "inputs": [
                 {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "previousOwner",
-                    "type": "address"
+                    "internalType": "uint256",
+                    "name": "_item",
+                    "type": "uint256"
                 },
                 {
-                    "indexed": true,
-                    "internalType": "address",
-                    "name": "newOwner",
-                    "type": "address"
+                    "internalType": "uint256",
+                    "name": "_price",
+                    "type": "uint256"
                 }
             ],
-            "name": "OwnershipTransferred",
-            "type": "event"
-        },
-        {
-            "inputs": [],
-            "name": "renounceOwnership",
-            "outputs": [],
+            "name": "openTrade",
+            "outputs": [
+                {
+                    "internalType": "bool",
+                    "name": "",
+                    "type": "bool"
+                }
+            ],
             "stateMutability": "nonpayable",
             "type": "function"
         },
@@ -193,6 +242,43 @@
             "type": "function"
         },
         {
+            "inputs": [
+                {
+                    "internalType": "address",
+                    "name": "sender",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "_item",
+                    "type": "uint256"
+                }
+            ],
+            "name": "setapprove",
+            "outputs": [],
+            "stateMutability": "nonpayable",
+            "type": "function"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "ad",
+                    "type": "uint256"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "bytes32",
+                    "name": "status",
+                    "type": "bytes32"
+                }
+            ],
+            "name": "TradeStatusChange",
+            "type": "event"
+        },
+        {
             "anonymous": false,
             "inputs": [
                 {
@@ -215,6 +301,25 @@
                 }
             ],
             "name": "Transfer",
+            "type": "event"
+        },
+        {
+            "anonymous": false,
+            "inputs": [
+                {
+                    "indexed": false,
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                },
+                {
+                    "indexed": false,
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "name": "received",
             "type": "event"
         },
         {
@@ -241,17 +346,8 @@
             "type": "function"
         },
         {
-            "inputs": [
-                {
-                    "internalType": "address",
-                    "name": "newOwner",
-                    "type": "address"
-                }
-            ],
-            "name": "transferOwnership",
-            "outputs": [],
-            "stateMutability": "nonpayable",
-            "type": "function"
+            "stateMutability": "payable",
+            "type": "receive"
         },
         {
             "inputs": [
@@ -286,6 +382,45 @@
                     "internalType": "address",
                     "name": "",
                     "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "_trade",
+                    "type": "uint256"
+                }
+            ],
+            "name": "getTrade",
+            "outputs": [
+                {
+                    "internalType": "bool",
+                    "name": "",
+                    "type": "bool"
+                },
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "bytes32",
+                    "name": "",
+                    "type": "bytes32"
                 }
             ],
             "stateMutability": "view",
@@ -330,12 +465,65 @@
         },
         {
             "inputs": [],
-            "name": "owner",
+            "name": "nftcounter",
             "outputs": [
                 {
-                    "internalType": "address",
+                    "internalType": "uint256",
                     "name": "",
-                    "type": "address"
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "openCounter",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "openTradeList",
+            "outputs": [
+                {
+                    "components": [
+                        {
+                            "internalType": "address",
+                            "name": "poster",
+                            "type": "address"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "item",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "price",
+                            "type": "uint256"
+                        },
+                        {
+                            "internalType": "bytes32",
+                            "name": "status",
+                            "type": "bytes32"
+                        },
+                        {
+                            "internalType": "uint256",
+                            "name": "_trade",
+                            "type": "uint256"
+                        }
+                    ],
+                    "internalType": "struct MyNFT.Otrade[]",
+                    "name": "",
+                    "type": "tuple[]"
                 }
             ],
             "stateMutability": "view",
@@ -406,6 +594,40 @@
                     "internalType": "string",
                     "name": "",
                     "type": "string"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "name": "trades",
+            "outputs": [
+                {
+                    "internalType": "address",
+                    "name": "poster",
+                    "type": "address"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "item",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "price",
+                    "type": "uint256"
+                },
+                {
+                    "internalType": "bytes32",
+                    "name": "status",
+                    "type": "bytes32"
                 }
             ],
             "stateMutability": "view",
