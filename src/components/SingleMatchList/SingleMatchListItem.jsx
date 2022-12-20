@@ -1,11 +1,23 @@
-import React from "react";
+import React , {useState } from "react";
 
 import BidService from "../../services/bidService";
 export default function SingleMatchItem({ matchitem }) {
-  console.log(
-    "🚀 ~ file: SingleMatchListItem.jsx ~ line 7 ~ SingleMatchListItem ",
-    matchitem
-  );
+  const [value, setValue] = useState('');
+  const [winner, setWinner] = useState('');
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    // console.log("提交");
+    const bidService = new BidService();
+    bidService.bid({
+      from: "win",
+      data: {
+        id:matchitem.id,
+        winner: winner,
+        value: value,
+      }
+    });
+  }
 
   return (
     <div className='col-md-5 px-4 m-3'>
@@ -26,26 +38,17 @@ export default function SingleMatchItem({ matchitem }) {
         <div className='d-flex justify-content-between align-items-center mt-3 flex-row'>
           <div>
             <div className='text-muted m-3'>
-              <p>Deadline at {matchitem.betDeadline}</p>
+              <p>Deadline at </p><p>{matchitem.betDeadline}</p>
             </div>
           </div>
-          <form name="bid_form" className="d-flex justify-content-center flex-column">
-            <select name="winner" className="rounded input-group-text" required="required">
-            <option value="" disabled selected>选择胜方</option>
-            <option value="host">{matchitem.host}</option>
-            <option value="guest">{matchitem.guest}</option>
+          <form name="bid_form" className="d-flex justify-content-center flex-column" onSubmit={handleSubmit}>
+            <select name="winner" className="rounded input-group-text" required="required" value={winner} onChange={event=>setWinner(event.target.value)}>
+              <option value="" disabled selected>选择胜方</option>
+              <option value="host">{matchitem.host}</option>
+              <option value="guest">{matchitem.guest}</option>
             </select>
-            <input name="amount" placeholder="请输入金额" type="text" className="rounded input-group-text" required="required" />
-            <input className="btn btn-primary rounded" type="submit" value="下注"
-              onClick={()=>new BidService().bid(
-                {
-                  from: "win",
-                  // data: {
-                  //   winner: bid_form.winner.value,
-                  //   amount: 
-                  // }
-                }
-              )} /> 
+            <input name="value" placeholder="请输入金额,单位为ETH" type="text" className="rounded input-group-text" required="required" value={value} onChange={event=>setValue(event.target.value)} />
+            <input className="btn btn-primary rounded" type="submit" value="下注" /> 
           </form>
         </div>
       </div>
