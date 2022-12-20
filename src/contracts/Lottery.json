@@ -114,21 +114,6 @@
                     "internalType": "bool",
                     "name": "is_B_win",
                     "type": "bool"
-                },
-                {
-                    "internalType": "uint16",
-                    "name": "rate_A_win",
-                    "type": "uint16"
-                },
-                {
-                    "internalType": "uint16",
-                    "name": "rate_B_win",
-                    "type": "uint16"
-                },
-                {
-                    "internalType": "uint16",
-                    "name": "rate_draw",
-                    "type": "uint16"
                 }
             ],
             "name": "game_close",
@@ -163,7 +148,7 @@
         },
         {
             "inputs": [],
-            "stateMutability": "nonpayable",
+            "stateMutability": "payable",
             "type": "constructor"
         },
         {
@@ -229,6 +214,19 @@
             "type": "receive"
         },
         {
+            "inputs": [],
+            "name": "admin",
+            "outputs": [
+                {
+                    "internalType": "address",
+                    "name": "",
+                    "type": "address"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
             "inputs": [
                 {
                     "internalType": "address",
@@ -291,6 +289,11 @@
                     "internalType": "bool",
                     "name": "is_paid",
                     "type": "bool"
+                },
+                {
+                    "internalType": "uint256",
+                    "name": "nft_id",
+                    "type": "uint256"
                 }
             ],
             "stateMutability": "view",
@@ -695,6 +698,32 @@
                     "internalType": "uint32",
                     "name": "",
                     "type": "uint32"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "getBalance",
+            "outputs": [
+                {
+                    "internalType": "uint256",
+                    "name": "",
+                    "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [],
+            "name": "other_contract_adr",
+            "outputs": [
+                {
+                    "internalType": "address payable",
+                    "name": "",
+                    "type": "address"
                 }
             ],
             "stateMutability": "view",
