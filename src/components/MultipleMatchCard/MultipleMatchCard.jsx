@@ -14,12 +14,10 @@ export default function MultipleMatchCard() {
     }, [MultipleMatchservice]);
 
   const [bestvalue, setBestValue] = useState("");
-  // const [championvalue, setChampionValue] = useState('');
-  // const [host, setHost] = useState('');
-  // const [guest, setGuest] = useState('');
   const [king, setKing] = useState("");
 
-  function handleBestSubmit() {
+  function handleBestSubmit(event) {
+    // event.preventDefault();
     const bidService = new BidService();
     bidService.bid({
       from: "best",
@@ -46,7 +44,7 @@ export default function MultipleMatchCard() {
                   <div className="fw-bold fs-1"> 射手王 </div>
                 </div>
                 <div className="text-secondary fw-bold">
-                  奖池大小: {MultipleMatches.value}ETH
+                  奖池大小: {MultipleMatches.value}Wei
                 </div>
                 <div className="text-primary">
                   赔率: {MultipleMatches.player[0]}-{MultipleMatches.player[1]}-
@@ -54,7 +52,11 @@ export default function MultipleMatchCard() {
                   {MultipleMatches.player[4]}
                 </div>
                 <div className="text-primary">
-                {MultipleMatches.rates[0]/1000}  -  {MultipleMatches.rates[1]/1000}  -  {MultipleMatches.rates[2]/1000}  -  {MultipleMatches.rates[3]/1000}  -  {MultipleMatches.rates[4]/1000}
+                  {MultipleMatches.rates[0] / 1000} -{" "}
+                  {MultipleMatches.rates[1] / 1000} -{" "}
+                  {MultipleMatches.rates[2] / 1000} -{" "}
+                  {MultipleMatches.rates[3] / 1000} -{" "}
+                  {MultipleMatches.rates[4] / 1000}
                 </div>
                 <form
                   className="d-flex justify-content-center align-items-center mt-3 flex-column"

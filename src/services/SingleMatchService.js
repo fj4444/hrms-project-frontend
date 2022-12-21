@@ -26,6 +26,7 @@ export default class SingleMatchService {
               guest: matchitem.teamB,
               hostRate: matchitem.rate_A_win / 1000,
               guestRate: matchitem.rate_B_win / 1000,
+              drawRate: matchitem.rate_draw / 1000,
             })
           }
 

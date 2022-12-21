@@ -16,10 +16,10 @@ export default class MarketListService {
                 };
                 for (var nft of transaction) {
                     result.data.push({
-                        id: nft._trade,
-                        poster: nft.poster,
-                        nftid: nft.item,
-                        price: nft.price,
+                        id: nft._trade.toNumber(),
+                        poster: nft.poster.toLowerCase(),
+                        nftid: nft.item.toNumber(),
+                        price: nft.price.toNumber()/10e17,
                     })
                 }
 

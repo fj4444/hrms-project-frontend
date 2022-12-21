@@ -14,7 +14,7 @@ export default class MultipleMatchService {
                         const result = {
                             player: transaction[0].players,
                             rates: transaction[0].rates,
-                            value: transaction[0].pool_value,
+                            value: transaction[0].pool_value.toString(),
                         };
                         return result;
                     }

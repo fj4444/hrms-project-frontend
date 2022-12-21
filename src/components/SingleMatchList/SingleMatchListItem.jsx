@@ -31,7 +31,7 @@ export default function SingleMatchItem({ matchitem }) {
           <div className='text-end align-text-bottom'>
             <div className='text-primary fw-bold'>赔率</div>
             <div className='text-secondary'>
-              {matchitem.hostRate} - {matchitem.guestRate}
+              {matchitem.hostRate} - {matchitem.guestRate} - {matchitem.drawRate}
             </div>
           </div>
         </div>

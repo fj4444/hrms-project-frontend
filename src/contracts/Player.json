@@ -1,5 +1,5 @@
 {
-    "abi": [
+    "abi":[
         {
             "inputs": [],
             "stateMutability": "payable",
@@ -184,11 +184,6 @@
                     "internalType": "uint8[5]",
                     "name": "goals",
                     "type": "uint8[5]"
-                },
-                {
-                    "internalType": "uint16[5]",
-                    "name": "rates",
-                    "type": "uint16[5]"
                 }
             ],
             "name": "game_close",
@@ -407,6 +402,25 @@
                     "internalType": "uint256",
                     "name": "",
                     "type": "uint256"
+                }
+            ],
+            "stateMutability": "view",
+            "type": "function"
+        },
+        {
+            "inputs": [
+                {
+                    "internalType": "uint32",
+                    "name": "game_id",
+                    "type": "uint32"
+                }
+            ],
+            "name": "getPool",
+            "outputs": [
+                {
+                    "internalType": "uint256[5]",
+                    "name": "",
+                    "type": "uint256[5]"
                 }
             ],
             "stateMutability": "view",
