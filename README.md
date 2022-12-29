@@ -1,23 +1,13 @@
 <p align="center">
-  <a href="https://github.com/ahmet-cetinkaya/hrms-project-frontend/graphs/contributors"><img src="https://img.shields.io/github/contributors/ahmet-cetinkaya/hrms-project-frontend.svg?style=for-the-badge"></a>
-  <a href="https://github.com/ahmet-cetinkaya/hrms-project-frontend/network/members"><img src="https://img.shields.io/github/forks/ahmet-cetinkaya/hrms-project-frontend.svg?style=for-the-badge"></a>
-  <a href="https://github.com/ahmet-cetinkaya/hrms-project-frontend/stargazers"><img src="https://img.shields.io/github/stars/ahmet-cetinkaya/hrms-project-frontend.svg?style=for-the-badge"></a>
-  <a href="https://github.com/ahmet-cetinkaya/hrms-project-frontend/issues"><img src="https://img.shields.io/github/issues/ahmet-cetinkaya/hrms-project-frontend.svg?style=for-the-badge"></a>
-  <a href="https://github.com/ahmet-cetinkaya/hrms-project-frontend/blob/master/LICENSE"><img src="https://img.shields.io/github/license/ahmet-cetinkaya/hrms-project-frontend.svg?style=for-the-badge"></a>
-  <a href="https://linkedin.com/in/ahmet-cetinkaya"><img src="https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555"></a>
-</p>
-<br />
-
-<p align="center">
   <a href="https://github.com/ahmet-cetinkaya/hrms-project-frontend"><img src="https://user-images.githubusercontent.com/53148314/117860940-8a011800-b299-11eb-82ee-54fa0c7a9c3a.png" height="125"></a>
-  <h3 align="center">HRMS Project Frontend</h3>
+  <h3 align="center">Blockchain course Project Frontend</h3>
   <p align="center">
-    Frontend of <a href="https://github.com/ahmet-cetinkaya/hrms-project-frontend">HRMS Project</a> with React.
+    Frontend of <a href="https://github.com/fj4444/hrms-project-frontend">Blockchain course Project</a> with React.
     <br />
     <br />
-    <a href="https://github.com/ahmet-cetinkaya/hrms-project-frontend/issues">Report Bug</a>
+    <a href="https://github.com/fj4444/hrms-project-frontend/issues">Report Bug</a>
     ·
-    <a href="https://github.com/ahmet-cetinkaya/hrms-project-frontend/issues">Request Feature</a>
+    <a href="https://github.com/fj4444/hrms-project-frontend/issues">Request Feature</a>
   </p>
 </p>
 
@@ -34,10 +24,6 @@
 [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://tr.reactjs.org/)
 [![Bootstrap](https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white)](https://getbootstrap.com/)
 [![Scss](https://img.shields.io/badge/Scss-CC6699?style=for-the-badge&logo=sass&logoColor=white)](https://sass-lang.com/)
-
-### UML Component Diagram
-
-![UML Component Diagram](./UMLComponentDiagram.svg)
 
 ## Usage
 
@@ -124,10 +110,4 @@ Distributed under the MIT License. See `LICENSE` for more information.
 
 ## Contact
 
-Ahmet ÇETİNKAYA - [ahmetcetinkaya.info](https://ahmetcetinkaya.info/)
-
-Project Link: [https://github.com/ahmet-cetinkaya/hrms-project-frontend](https://github.com/ahmet-cetinkaya/hrms-project-frontend)
-
-## Acknowledgements
-
-- [Engin Demirog](https://www.linkedin.com/in/engindemirog)
+Project Link: [https://github.com/fj4444/hrms-project-frontend](https://github.com/fj4444/hrms-project-frontend)
