@@ -1,5 +1,4 @@
 <p align="center">
-  <a href="https://github.com/ahmet-cetinkaya/hrms-project-frontend"><img src="https://user-images.githubusercontent.com/53148314/117860940-8a011800-b299-11eb-82ee-54fa0c7a9c3a.png" height="125"></a>
   <h3 align="center">Blockchain course Project Frontend</h3>
   <p align="center">
     Frontend of <a href="https://github.com/fj4444/hrms-project-frontend">Blockchain course Project</a> with React.
