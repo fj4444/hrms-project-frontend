@@ -10,7 +10,7 @@ export default class TransactionService {
               const provider = new ethers.providers.Web3Provider(window.ethereum);
               const signer = provider.getSigner();
               const contract = new ethers.Contract(mynftaddr, MyNFT.abi, signer);
-              const transaction = await contract.openTrade(data.id,ethers.utils.parseEther(data.price),{gasLimit: 3e7});
+              const transaction = await contract.openTrade(data.id,ethers.utils.parseEther(data.price));
               //给奖池合约的请求
               if (transaction) {
                 alert("挂单成功");
@@ -40,7 +40,7 @@ export default class TransactionService {
           const transactionParameters = {
             to: mynftaddr, // Required except during contract publications.
             from: localStorage.getItem("address"), // must match user's active address.
-            value: ethers.utils.parseEther(data.price).toHexString(), // Only required to send ether to the recipient from the initiating external account.
+            value: ethers.utils.parseEther(data.price.toString()).toHexString(), // Only required to send ether to the recipient from the initiating external account.
             data: funcdata,
             gas: '0x493E0',
             chainId: '0x3', // Used to prevent transaction reuse across blockchains. Auto-filled by MetaMask.
@@ -74,7 +74,7 @@ export default class TransactionService {
           const provider = new ethers.providers.Web3Provider(window.ethereum);
           const signer = provider.getSigner();
           const contract = new ethers.Contract(mynftaddr, MyNFT.abi, signer);
-          const transaction = await contract.executeTrade(data.id,{gasLimit: 3e7});
+          const transaction = await contract.cancelTrade(data.id);
           //给奖池合约的请求
           if (transaction) {
             alert("取消成功");
